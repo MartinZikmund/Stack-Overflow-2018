@@ -17,15 +17,14 @@ namespace CanvasDrawable
     {
         Paint myPaint = new Paint();
         Color myColor = new Color();
-        Path myPath = new Path(); //Bitmap bitmap; Resource res;
+        Path myPath = new Path(); 
         private int a, b;
         Bitmap bitmap;
 
         public CanvasView(Context context) : base(context) //constructor
         {
             bitmap = BitmapFactory.DecodeResource(Resources, Resource.Drawable.green);
-            //var bitmap = Bitmap.CreateBitmap(green, 100, 100, 400, 400);
-            //var bm = Android.Graphics.Drawables.BitmapDrawable.CreateFromPath("E:\\[project_name]\\Resources\\drawable\\green.jpg");
+
             int[,] FirstPath; int arrayLength = 0;
             FirstPath = new int[,] { { 200, 350 }, { 70, 80 }, { 90, 40 }, { 10, 40 }, { 50, 80 }, { 0, 350 } };
             arrayLength = FirstPath.Length / 2;
@@ -48,8 +47,7 @@ namespace CanvasDrawable
             b = canvas.Height; a = canvas.Width;
             canvas.DrawText(b.ToString() + " x " + a.ToString(), 10, b - 50, myPaint);
             canvas.DrawPath(myPath, myPaint);
-            //canvas.SetBitmap(Resource.Drawable.green);
-            //canvas.DrawBitmap(bm, 100, 100, null);
+
             canvas.DrawBitmap(bitmap,100,100, null);
         }
 
